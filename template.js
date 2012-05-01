@@ -105,16 +105,18 @@ $(document).ready(function () {
     
     /* This handles the focus region when the user clicks the MAINTIMELINE*/
     $("#maintimeline").click(function(mouse) {
+        var offset = $("#maintimeline").offset();
+        var fixedX = mouse.pageX - offset.left;
         if (!focusDistance) {
             focusDistance = true;
-            placeDot("#maintimeline", mouse.pageX, mouse.pageY);
+            placeDot("#maintimeline", fixedX, mouse.pageY);
             dotCoords = [];
-            dotCoords.push(mouse.pageX, mouse.pageY);
+            dotCoords.push(fixedX, mouse.pageY);
         } else {
-            placeBeam("#maintimeline", mouse.pageX, mouse.pageY, dotCoords);
+            placeBeam("#maintimeline", fixedX, mouse.pageY, dotCoords);
             focusDistance = false;
             focusRegion = [];
-            focusRegion.push(Math.min(mouse.pageX, dotCoords[0]), Math.max(mouse.pageX, dotCoords[0]));
+            focusRegion.push(Math.min(fixedX, dotCoords[0]), Math.max(mouse.pageX, dotCoords[0]));
         }
     });
 
@@ -258,7 +260,7 @@ $(document).ready(function () {
     
     $("#ready").click(function() {
         var coords = $("#videos").offset();
-       var spaceY = .75*coords.top;
+       var spaceY = .7*coords.top;
        var spaceX = 0;
        var spaceWidth = $("body").width();
        var spaceHeight = screen.height - spaceY;
@@ -274,7 +276,7 @@ $(document).ready(function () {
 Note : the order of these bounds does not matter
 */
 function placeBeam(where, x, y, coords) {
-    $(".dot").css("background", "#666");
+    $(".dot").css("visibility", "hidden");
     $("<div/>", {"class": 'beam'}).css({'width': Math.abs(coords[0] - x) + "px", 'left': Math.min(coords[0], x), 'background': "yellow"}).appendTo(where);
 }
 
@@ -283,7 +285,7 @@ function placeBeam(where, x, y, coords) {
 @param x, y is the [xcoord, ycoord] of this dot
 */
 function placeDot(where, x, y) {
-    $(".beam").css("background", "#666");
+    $(".beam").css("visibility", "hidden");
     $("<div/>", { "class": 'dot'}).css({'left': x, 'background': "yellow"}).appendTo(where);
 }
 function displayEvent(id, title, color, time){
@@ -433,12 +435,15 @@ function regularPositioning(positionInRow, positionInCol, spaceX, spaceY, spacin
 }
 
 function sec2hms(time){
-    var minutes = parseInt( time / 60 ) % 60;
-    var seconds = time % 60;
+    var minutes = Math.floor(parseInt( time / 60 ) % 60);
+    var seconds = Math.floor(time % 60);
     if (seconds < 10) {
         seconds = "0" + seconds; //modified this to add a zero to display 3:09 instead of 3:9 for example
     }
-    return minutes + ":" + seconds;
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    return "00:" + minutes + ":" + seconds;
 }
 
 function toggleVid(id){

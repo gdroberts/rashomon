@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>rashomon</title>
+<title>Rashomon</title>
 <style type="text/css">
 
 </style>
@@ -12,6 +12,7 @@
 <script src="http://cdn.popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 <script type="text/javascript" src="tweetable/jquery.tweetable.js"></script>
 <script src="template.js"></script>
+<script src="timeline.js"></script>
 
 </head>
 
@@ -35,10 +36,13 @@
 <div id="controls">
 <span class="button" id="play">&#x25B6;</span>
 <span class="button" id="stop">&#x25A0;</span>
-<span class="button" id="ready">Ready?</span>
+<span class="timeloc">00:00:00</span>
+<span class="button" id="ready"> | Ready?</span>
 </div>
 </section>
-
+<div id="navbar">
+    <div class="timeline" id="navtl"><div id="timepos"></div></div>
+    </div>
     <div class="namebox">
     
 
