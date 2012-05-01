@@ -1,0 +1,268 @@
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 600px;
+    font-family: sans-serif;
+    background: #000;
+}
+
+#hdwrapper {
+    background: #666;
+    margin: 0;
+    height: 85px;
+}
+
+#header {
+    padding-top: 15px;
+    padding-left: 140px;
+    width: 850px;
+    height: auto;
+}
+
+#header #project {
+    color: white;
+    font-family: sans-serif;
+    font-size: 48pt;
+    font-weight: bold;
+    text-shadow: 0 -1px 1px #000;
+}
+
+#tlinfo {
+    color: #333;
+    background: #ddd;
+}
+
+#timelines {
+    width: 100%
+}
+
+.event {
+    position: absolute;
+    height: 25px;
+    width: 3px;
+    cursor: pointer;
+}
+
+.dot {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+}
+
+.beam {
+    position: absolute;
+    height: 25px;
+    opacity: 0.3;
+}
+
+#videoswrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 30px;
+    background: #aaa;
+}
+
+.pager {
+    position: relative;
+    background: #c8c8c8;
+    width: 40px;
+    height: 17px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pagerAppear {
+    position: relative;
+    background: #c8c8c8;
+    width: 40px;
+    height: 17px;
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pagerDisappear {
+  background: #aaa;
+  color: #aaa;
+}
+
+.vidline {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+.vidnum {
+    position: relative;
+    float: left;
+    background: #c8c8c8;
+    color: black;
+    font-size: 20px;
+    width: 40px;
+    height: 20px;
+    -o-transition: background 0.8s linear;
+    -moz-transition: background 0.8s linear;
+    -ms-transition: background 0.8s linear;
+    -webkit-transition: background 0.8s linear;
+    transition: background 0.8s linear;
+    cursor: pointer;
+    text-align: center;
+}
+
+.vidmeta {
+    z-index: 99;
+    position: absolute;
+    left: 43px;
+    opacity: 0;
+    margin-left: 3px;
+    background: #ddd;
+    font-size: 7pt;
+    line-height: 0.4em;
+    text-align: center;
+    float: left;
+    width: 103px;
+    -o-transition: opacity 0.1s linear;
+    -moz-transition: opacity 0.1s linear;
+    -webkit-transition: opacity 0.1s linear;
+    -ms-transition: opacity 0.1s linear;    
+    transition: opacity 0.1s linear;
+    cursor: default;
+}
+
+.vidmeta:hover {
+    opacity: 1;
+}
+
+.vidactive {
+    background: #0c0;
+}
+
+.vidtime {
+    position: absolute;
+    left: 450px;
+    width: 30px;
+    height: 100%;
+    background: #ececec;
+}
+
+#vselector {
+    margin-left: 3px;
+    background: #c8c8c8;
+    width: 100%;
+    height: 100%;
+}
+
+.baractive {
+    right: 0;
+    overflow: hidden;
+}
+
+#videos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+#tlcontainer {
+    position: relative;
+    width: 100%;
+    padding-top: 30px;
+    background: #aaa;
+    height: 25px;
+}
+
+.namebox {
+    float: left;
+    background: #c8c8c8;
+    border-right: 3px solid #aaa;
+    width: 145px;
+    height: 100%;
+    text-align: center;
+}
+
+.namebox #title {
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 0;
+    padding-top: 3px;
+    letter-spacing: 2.5px;
+}
+
+#maintimeline {
+    width: 100%;
+    background: #666;
+    font-size: 18pt;
+    height: 100%;
+}
+
+.controlbox {
+    position: relative;
+    top: 0;
+    font-size: 8pt;
+    background: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 18px;
+    width: 85px;
+}
+
+#controls {
+    padding-top: 3px;
+    padding-left: 15px;
+}
+
+#controls .button {
+    cursor: pointer;
+}
+
+#controls .button:hover {
+    color: green;
+}
+
+#videos {
+    clear: both;
+}
+
+#tweetPart {
+    width: 100%;
+    height: 100%;
+    font-family: 'Fredoka One', cursive;
+}
+
+#videoTweets {
+    position: relative;
+    float: right;
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    border: 10px solid;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-color: #00B2EE;
+    font-family: 'Fredoka One', cursive;
+}
+   
+
+#videoTweets .button {
+    position:relative;
+    width: 25%;
+    height: 100%;
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+}
+
+#videoTweets .button:hover {
+    color: #551033;
+}
+
+
+ 
